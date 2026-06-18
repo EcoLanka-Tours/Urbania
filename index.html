@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Lanka Tours | Private Tourist Transport – Sri Lanka</title>
+  <meta name="description" content="Premium private tourist transport across Sri Lanka. Force Urbania 16-seater luxury vehicle. Airport transfers, day charters, DMC tours. Colombo-based, island-wide coverage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:    #B8962E;
+      --gold-lt: #D4AF55;
+      --ink:     #1A1A1A;
+      --warm:    #F7F4EF;
+      --muted:   #6B6560;
+      --white:   #FFFFFF;
+      --radius:  4px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(26,26,26,0.92);
+      backdrop-filter: blur(8px);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gold-lt);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-lt); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #111 0%, #1e1a14 60%, #2a2010 100%);
+      display: flex; align-items: center;
+      padding: 120px 40px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8962E' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 1;
+    }
+    .hero-inner {
+      max-width: 760px;
+      position: relative;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block; width: 32px; height: 1px;
+      background: var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 6vw, 4.2rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.12;
+      margin-bottom: 24px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold-lt);
+    }
+    .hero-sub {
+      color: #aaa;
+      font-size: 1.05rem;
+      max-width: 520px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold);
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.04em;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      border: 1px solid #555;
+      color: #ccc;
+      font-size: 0.9rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-lt); }
+
+    /* ── STRIP ── */
+    .strip {
+      background: var(--gold);
+      padding: 14px 40px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 32px; flex-wrap: wrap;
+    }
+    .strip-item {
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 8px;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 90px 40px; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    /* ── VEHICLE ── */
+    .vehicle-section { background: var(--warm); }
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-top: 48px;
+    }
+    .vehicle-visual {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2820 100%);
+      border-radius: 6px;
+      aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 16px;
+      border: 1px solid #333;
+    }
+    .vehicle-icon {
+      font-size: 5rem;
+      line-height: 1;
+    }
+    .vehicle-badge {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold-lt);
+      letter-spacing: 0.08em;
+    }
+    .vehicle-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+    .spec-item {
+      background: var(--white);
+      border: 1px solid #e8e3da;
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .spec-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .spec-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── SERVICES ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .service-card {
+      border: 1px solid #e8e3da;
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 4px 20px rgba(184,150,46,0.08);
+    }
+    .service-icon { font-size: 2rem; margin-bottom: 16px; }
+    .service-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .service-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── COVERAGE ── */
+    .coverage-section { background: var(--ink); color: var(--white); }
+    .coverage-section .section-title { color: var(--white); }
+    .coverage-section .section-sub { color: #aaa; }
+    .coverage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+    .coverage-item {
+      border: 1px solid #333;
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .coverage-item:hover { border-color: var(--gold); }
+    .coverage-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 4px; }
+    .coverage-note { font-size: 0.78rem; color: #888; }
+
+    /* ── HOURS ── */
+    .hours-section { background: var(--warm); }
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .hours-table { width: 100%; border-collapse: collapse; }
+    .hours-table tr { border-bottom: 1px solid #e8e3da; }
+    .hours-table td { padding: 14px 0; font-size: 0.92rem; }
+    .hours-table td:last-child { text-align: right; color: var(--muted); }
+    .hours-note {
+      background: var(--white);
+      border: 1px solid #e8e3da;
+      border-left: 3px solid var(--gold);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section { background: var(--white); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 48px;
+      align-items: start;
+    }
+    .contact-item {
+      display: flex; gap: 20px; align-items: flex-start;
+      margin-bottom: 32px;
+    }
+    .contact-icon-wrap {
+      width: 44px; height: 44px; flex-shrink: 0;
+      background: var(--warm);
+      border: 1px solid #e8e3da;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .contact-label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .contact-value { font-weight: 600; font-size: 0.98rem; }
+    .contact-value a { color: var(--ink); text-decoration: none; }
+    .contact-value a:hover { color: var(--gold); }
+    .wa-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 16px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .wa-btn:hover { background: #1ebe5d; transform: translateY(-1px); }
+    .contact-aside {
+      background: var(--warm);
+      border-radius: var(--radius);
+      padding: 36px;
+    }
+    .contact-aside h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .contact-aside p { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: #888;
+      padding: 32px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--gold-lt);
+    }
+    .footer-legal { font-size: 0.8rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      section { padding: 60px 20px; }
+      .hero { padding: 100px 20px 60px; }
+      .vehicle-grid,
+      .hours-grid,
+      .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .coverage-grid { grid-template-columns: 1fr 1fr; }
+      .vehicle-specs { grid-template-columns: 1fr 1fr; }
+      footer { flex-direction: column; text-align: center; padding: 24px 20px; }
+      .strip { gap: 16px; padding: 14px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="#">Eco Lanka Tours</a>
+  <ul class="nav-links">
+    <li><a href="#vehicle">Vehicle</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Colombo-based · Island-wide coverage</p>
+    <h1>Sri Lanka,<br />travelled <em>properly.</em></h1>
+    <p class="hero-sub">
+      Private tourist transport in the Force Urbania — a premium 16-seater built for comfort across every road in Sri Lanka. Airport transfers, day charters, and multi-day DMC tours.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn-primary" href="https://wa.me/94777583265?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20transport%20booking." target="_blank" rel="noopener">
+        📲 WhatsApp Us
+      </a>
+      <a class="btn-outline" href="#services">View Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <span class="strip-item">✦ 16-Seater Luxury Vehicle</span>
+  <span class="strip-item">✦ Air Conditioned</span>
+  <span class="strip-item">✦ Professional Drivers</span>
+  <span class="strip-item">✦ Island-Wide Coverage</span>
+</div>
+
+<!-- VEHICLE -->
+<section class="vehicle-section" id="vehicle">
+  <div class="container">
+    <p class="section-label">Our Vehicle</p>
+    <h2 class="section-title">Force Urbania 16-Seater</h2>
+    <p class="section-sub">A spacious, air-conditioned people-carrier configured for group travel comfort — ideal for tour groups, DMC itineraries, and corporate transfers.</p>
+    <div class="vehicle-grid">
+      <div>
+        <div class="vehicle-visual">
+          <div class="vehicle-icon">🚐</div>
+          <div class="vehicle-badge">FORCE URBANIA · 16-SEATER</div>
+        </div>
+      </div>
+      <div>
+        <div class="vehicle-specs">
+          <div class="spec-item">
+            <div class="spec-value">16</div>
+            <div class="spec-label">Passenger capacity</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">A/C</div>
+            <div class="spec-label">Full air conditioning</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">All</div>
+            <div class="spec-label">Island-wide routes</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-value">24 h</div>
+            <div class="spec-label">Booking availability</div>
+          </div>
+        </div>
+        <p style="margin-top:28px; font-size:0.9rem; color:var(--muted); line-height:1.7;">
+          Operated by <strong>Eco Lanka Enterprises (Pvt) Ltd</strong>, a Colombo-based transport and logistics company serving the inbound tourism and DMC market across Sri Lanka.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <p class="section-label">What We Offer</p>
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">From one-way airport transfers to multi-day island circuits — tailored to tour operators, DMCs, and private groups.</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h3 class="service-title">Airport Transfers</h3>
+        <p class="service-desc">Punctual pick-up and drop-off at Bandaranaike International Airport. Meet & greet on request. Flight tracking included.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗓️</div>
+        <h3 class="service-title">Day Charters</h3>
+        <p class="service-desc">Full-day or half-day vehicle hire with a professional driver. Ideal for city tours, excursions, and flexible itineraries.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <h3 class="service-title">Multi-Day Tours</h3>
+        <p class="service-desc">End-to-end transport for multi-day DMC itineraries across the Cultural Triangle, Hill Country, South Coast, and beyond.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🏨</div>
+        <h3 class="service-title">Hotel Transfers</h3>
+        <p class="service-desc">Point-to-point transfers between hotels, resorts, and tourist sites. On-time, comfortable, and professionally handled.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3 class="service-title">DMC & Agent Rates</h3>
+        <p class="service-desc">Special rate structures available for travel agents, DMCs, and tour operators. Contact us for a tailored rate card.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3 class="service-title">Group Transport</h3>
+        <p class="service-desc">Up to 16 passengers in one vehicle. Conferences, MICE, family groups, and inbound travel parties welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COVERAGE -->
+<section class="coverage-section" id="coverage">
+  <div class="container">
+    <p class="section-label">Where We Go</p>
+    <h2 class="section-title">Island-Wide Coverage</h2>
+    <p class="section-sub">Based in Colombo. No destination in Sri Lanka is out of reach.</p>
+    <div class="coverage-grid">
+      <div class="coverage-item">
+        <div class="coverage-name">Colombo</div>
+        <div class="coverage-note">Base of operations</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">BIA Airport</div>
+        <div class="coverage-note">Katunayake</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Kandy</div>
+        <div class="coverage-note">Cultural Triangle</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Galle</div>
+        <div class="coverage-note">Southern Coast</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Ella</div>
+        <div class="coverage-note">Hill Country</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Sigiriya</div>
+        <div class="coverage-note">North Central</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Nuwara Eliya</div>
+        <div class="coverage-note">Tea Country</div>
+      </div>
+      <div class="coverage-item">
+        <div class="coverage-name">Trincomalee</div>
+        <div class="coverage-note">East Coast</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section class="hours-section" id="hours">
+  <div class="container">
+    <p class="section-label">Operating Hours</p>
+    <h2 class="section-title">When We're Available</h2>
+    <div class="hours-grid">
+      <div>
+        <table class="hours-table">
+          <tr><td>Monday – Friday</td><td>6:00 AM – 10:00 PM</td></tr>
+          <tr><td>Saturday</td><td>6:00 AM – 10:00 PM</td></tr>
+          <tr><td>Sunday</td><td>6:00 AM – 10:00 PM</td></tr>
+          <tr><td>Public Holidays</td><td>Available on request</td></tr>
+          <tr><td>Airport Transfers</td><td>24 hours (pre-booked)</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="hours-note">
+          <strong>Advance booking recommended.</strong> For early-morning departures, late-night arrivals, and multi-day trips, please contact us at least 24 hours in advance via WhatsApp or email so we can confirm availability and prepare accordingly.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2 class="section-title">Book a Trip</h2>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">📲</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value">
+              <a href="https://wa.me/94777583265" target="_blank" rel="noopener">+94 777 583 265</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">✉️</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-value">
+              <a href="mailto:urbania@ecolankaexports.com">urbania@ecolankaexports.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon-wrap">📍</div>
+          <div>
+            <div class="contact-label">Base Location</div>
+            <div class="contact-value">Colombo, Sri Lanka</div>
+          </div>
+        </div>
+        <a class="wa-btn" href="https://wa.me/94777583265?text=Hello%2C%20I%27d%20like%20to%20inquire%20about%20a%20transport%20booking." target="_blank" rel="noopener">
+          <span>💬</span> Chat on WhatsApp
+        </a>
+      </div>
+      <div>
+        <div class="contact-aside">
+          <h3>For DMCs & Travel Agents</h3>
+          <p>We work with inbound tour operators and destination management companies across Sri Lanka. Rate cards, volume discounts, and dedicated vehicle allocations are available.</p>
+          <p>Reach us on WhatsApp or email with your group size, itinerary dates, and requirements — we'll respond within a few hours.</p>
+          <a class="btn-primary" href="mailto:urbania@ecolankaexports.com" style="display:inline-flex;">
+            📧 Email Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Eco Lanka Tours</div>
+  <div class="footer-legal">
+    Operated by Eco Lanka Enterprises (Pvt) Ltd · Colombo, Sri Lanka · <a href="mailto:urbania@ecolankaexports.com" style="color:#888;">urbania@ecolankaexports.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
